@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 # FastAPI endpoint
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = "https://diabetes-7edo.onrender.com/predict"
 
 # Page config
 st.set_page_config(page_title="Diabetes Prediction Dashboard", page_icon="🩺", layout="wide")
@@ -52,7 +52,9 @@ if submit_button:
         response = requests.post(API_URL, json=payload)
         if response.status_code == 200:
             result = response.json()
-            prediction = result.get("Predicted", None)
+            st.json(result)  # Optional: see API response in Streamlit
+
+            prediction = result.get("predicted_class", None)
             
             if prediction is not None:
                 st.markdown("---")
@@ -69,9 +71,9 @@ if submit_button:
                         unsafe_allow_html=True
                     )
                 
-                # Add a probability bar (fake example, can integrate real probability from API)
-                if "Probability" in result:
-                    prob = result["Probability"]
+                # Show confidence
+                if "confidence" in result:
+                    prob = result["confidence"]
                     st.progress(prob)
             else:
                 st.warning("❌ Prediction failed. Check API response.")
