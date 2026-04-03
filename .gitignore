@@ -2,6 +2,3 @@ myenv/
 __pycache__/
 *.pyc
 .env
-model.pkl
-
-scaler.pkl
