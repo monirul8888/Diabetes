@@ -10,6 +10,7 @@ import {
   MAX_PREDICTIONS,
   getPredictionData,
 } from "../utils/predictionLimit";
+import AIChatbot from "../components/AIChatbot";
 
 export default function DiabetesPrediction() {
   const [form, setForm] = useState({
@@ -79,7 +80,7 @@ export default function DiabetesPrediction() {
 
       {/* USAGE INFO */}
 
-      <p className="text-sm text-gray-500 mb-4">
+<p className="text-sm text-red-500 mb-4 font-bold">
         Remaining predictions this month: {remaining}
       </p>
 
@@ -138,6 +139,8 @@ export default function DiabetesPrediction() {
       </div>
 
       <Modal result={result} onClose={() => setResult(null)} />
+        <AIChatbot></AIChatbot>
     </div>
+    
   );
 }

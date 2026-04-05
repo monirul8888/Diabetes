@@ -28,7 +28,7 @@ export default function Contact() {
 
         <p className="text-gray-600">📧 Email: support@healthpredictor.ai</p>
 
-        <p className="text-gray-600">📞 Phone: +880 1XXXXXXXXX</p>
+        <p className="text-gray-600">📞 Phone: +880 1742958888</p>
 
         <p className="text-gray-600">
           💬 Live Chat: Available for Premium users

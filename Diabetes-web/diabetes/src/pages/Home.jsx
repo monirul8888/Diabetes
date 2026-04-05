@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import AIChatbot from "../components/AIChatbot";
 
 export default function Home() {
   return (
@@ -144,6 +145,9 @@ export default function Home() {
           Run Free Prediction
         </Link>
       </section>
+
+      {/* AI CHATBOT */}
+      <AIChatbot />
 
     </div>
   );

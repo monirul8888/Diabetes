@@ -1,4 +1,4 @@
-export const MAX_PREDICTIONS = 100;
+export const MAX_PREDICTIONS = 5;
 
 export function getPredictionData() {
   const data = JSON.parse(localStorage.getItem("predictionData"));
